@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/stemrider_xyz/ --output=_site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

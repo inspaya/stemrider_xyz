@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Be+Vietnam+Pro%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
+
+    <title>STEMRider.xyz | Inspiring communities across Nigeria through STEM projects and adventures</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+        style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+
+            {% include "header.njk" %}
+
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <div class="flex min-w-72 flex-col gap-3">
+                <p class="text-[#111418] tracking-light text-[32px] font-bold leading-tight">{{ title }}</p>
+                <p class="text-[#60758a] text-sm font-normal leading-normal">{{ preview }}</p>
+              </div>
+            </div>
+            <div class="flex w-full grow bg-white @container p-4">
+              <div class="w-full gap-1 overflow-hidden bg-white @[480px]:gap-2 aspect-[3/2] rounded-lg flex">
+                <div
+                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
+                  style='background-image: url("{{ cover }}");'
+                ></div>
+              </div>
+            </div>
+            <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Project Overview</h2>
+            <p class="text-[#111418] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              {{ description }}
+            </p>
+            <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Impact Metrics</h2>
+            <div class="flex flex-wrap gap-4 p-4">
+              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#dbe0e6]">
+                <p class="text-[#111418] text-base font-medium leading-normal">Units Built</p>
+                <p class="text-[#111418] tracking-light text-2xl font-bold leading-tight">{{ units }}</p>
+              </div>
+              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#dbe0e6]">
+                <p class="text-[#111418] text-base font-medium leading-normal">Participants</p>
+                <p class="text-[#111418] tracking-light text-2xl font-bold leading-tight">{{ participants }}</p>
+              </div>
+              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#dbe0e6]">
+                <p class="text-[#111418] text-base font-medium leading-normal">STEM Concepts</p>
+                <p class="text-[#111418] tracking-light text-2xl font-bold leading-tight">{{ stem_concepts }}</p>
+              </div>
+              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#dbe0e6]">
+                <p class="text-[#111418] text-base font-medium leading-normal">Status</p>
+                <p class="text-[#111418] tracking-light text-2xl font-bold leading-tight">{{ status }}</p>
+              </div>
+            </div>
+            <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Community Involvement</h2>
+            <p class="text-[#111418] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              {{ community_involvement }}
+            </p>
+            <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Impact Locations</h2>
+            <p class="text-[#111418] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              This project has been implemented in various locations as shown by the markers on the map below, highlighting our reach and the diverse communities we serve.
+            </p>
+          </div>
+        </div>
+
+            {% include "footer.njk" %}
+
+        </div>
+    </div>
+</body>
+
+</html>
