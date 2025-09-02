@@ -1,0 +1,148 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Be+Vietnam+Pro%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+
+    <title>STEMRider.xyz | Inspiring communities across Nigeria through STEM projects and adventures</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+</head>
+
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+        style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f5] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#111418]">
+          <a href="/index">
+      <div class="absolute top-4 left-4">
+  <img 
+    src="/assets/STEMRiderLogo.png" 
+    alt="STEM Rider Logo"
+    class="w-[80px] md:w-[110px] lg:w-[200px]"
+      >
+        </div>
+          </a>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="/index.html">Home</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="/about">About</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="/projects">Projects</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="/resources">Resources</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="/comics">Comics</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="/contact">Contact</a>
+            </div>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0d80f2] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+              <span class="truncate"><a href="/get_involved">Get Involved</a></span>
+            </button>
+          </div>
+</header>
+
+            <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <!-- <div class="flex flex-wrap gap-2 p-4">
+              <a class="text-[#60758a] text-base font-medium leading-normal" href="resources.html">Resources</a>
+              <span class="text-[#60758a] text-base font-medium leading-normal">/</span>
+              <span class="text-[#111418] text-base font-medium leading-normal">Comics</span>
+            </div> -->
+            <h2 class="text-[#111418] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">Comic Reader - The Prototype Issue</h2>
+            <p class="text-[#111418] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              <b>Synopsis:</b> Join STEMRider as he navigates Dr. IHY's opposition to build a CNC Hot-wire Cutter Machine for the community
+            </p>
+            <div class="flex w-full grow bg-white @container p-4">
+              <div class="w-full gap-1 overflow-hidden bg-white @[480px]:gap-2 aspect-[3/2] rounded-lg flex">
+                <div
+                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
+                  style='background-image: url("./assets/comic_covers/website_comic_card.svg");'
+                ></div>
+              </div>
+            </div>
+            <div class="flex items-center justify-center p-4">
+              <a href="#" class="flex size-10 items-center justify-center">
+                <div class="text-[#111418]" data-icon="CaretLeft" data-size="18px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
+                  </svg>
+                </div>
+              </a>
+              <a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-10 items-center justify-center text-[#111418] rounded-full bg-[#f0f2f5]" href="#">1</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111418] rounded-full" href="#">2</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111418] rounded-full" href="#">3</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111418] rounded-full" href="#">4</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111418] rounded-full" href="#">5</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111418] rounded-full" href="#">6</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111418] rounded-full" href="#">7</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111418] rounded-full" href="#">8</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111418] rounded-full" href="#">9</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111418] rounded-full" href="#">10</a>
+              <a href="#" class="flex size-10 items-center justify-center">
+                <div class="text-[#111418]" data-icon="CaretRight" data-size="18px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div class="flex justify-center">
+              <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 max-w-[480px] justify-center">
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0d80f2] text-white text-sm font-bold leading-normal tracking-[0.015em] grow"
+                >
+                  <span class="truncate">Next Page</span>
+                </button>
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f0f2f5] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] grow"
+                >
+                  <span class="truncate">Previous Page</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                    <footer class="flex justify-center">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <footer class="flex flex-col gap-6 px-14 py-10 text-center @container">
+              <div class="flex flex-wrap items-center justify-center @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#60758a] text-sm font-normal leading-normal min-w-10" href="/about">About</a>
+                <a class="text-[#60758a] text-sm font-normal leading-normal min-w-10" href="/projects">Projects</a>
+                <a class="text-[#60758a] text-sm font-normal leading-normal min-w-10" href="/resources">Resources</a>
+                <a class="text-[#60758a] text-sm font-normal leading-normal min-w-10" href="/comics">Comics</a>
+                <a class="text-[#60758a] text-sm font-normal leading-normal min-w-10" href="/contact">Contact</a>
+                <a class="text-[#60758a] text-sm font-normal leading-normal min-w-10" href="/get_involved">Get Involved</a>
+              </div>
+              <div class="flex flex-wrap justify-center gap-4">
+                
+                <a href="https://instagram.com/istemlabsafricaig">
+                  <div class="text-[#60758a]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+              <a href="https://istemlabs.africa/">
+              <p class="text-[#60758a] text-sm font-normal leading-normal">@2025 STEMRider. All rights reserved.</p>
+              </a>
+            </footer>
+          </div>
+        </footer>
+
+        </div>
+    </div>
+</body>
+
+</html>
