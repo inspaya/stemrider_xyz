@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Be+Vietnam+Pro%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
+
+    <title>STEMRider.xyz | Inspiring communities across Nigeria through STEM projects and adventures</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+        style='font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+
+            {% include "header.njk" %}
+
+        
+  <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <div class="flex min-w-72 flex-col gap-3">
+                <p class="text-[#111418] tracking-light text-[32px] font-bold leading-tight">{{title}}</p>
+                <p class="text-[#60758a] text-sm font-normal leading-normal">{{preview}}</p>
+              </div>
+            </div>
+            <h3 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Description</h3>
+            <p class="text-[#111418] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              {{description}}
+            </p>
+            <h3 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Learning Objectives</h3>
+            <div class="px-4">
+              <label class="flex gap-x-3 py-3 flex-row">
+                <input
+                  type="checkbox"
+                  class="h-5 w-5 rounded border-[#dbe0e6] border-2 bg-transparent text-[#0d80f2] checked:bg-[#0d80f2] checked:border-[#0d80f2] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#dbe0e6] focus:outline-none"
+                />
+                <p class="text-[#111418] text-base font-normal leading-normal">{{Objective1}}</p>
+              </label>
+              <label class="flex gap-x-3 py-3 flex-row">
+                <input
+                  type="checkbox"
+                  class="h-5 w-5 rounded border-[#dbe0e6] border-2 bg-transparent text-[#0d80f2] checked:bg-[#0d80f2] checked:border-[#0d80f2] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#dbe0e6] focus:outline-none"
+                />
+                <p class="text-[#111418] text-base font-normal leading-normal">{{Objective2}}</p>
+              </label>
+              <label class="flex gap-x-3 py-3 flex-row">
+                <input
+                  type="checkbox"
+                  class="h-5 w-5 rounded border-[#dbe0e6] border-2 bg-transparent text-[#0d80f2] checked:bg-[#0d80f2] checked:border-[#0d80f2] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#dbe0e6] focus:outline-none"
+                />
+                <p class="text-[#111418] text-base font-normal leading-normal">{{Objective3}}</p>
+              </label>
+            </div>
+            <h3 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Materials Required</h3>
+            <p class="text-[#111418] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              To conduct these activities, you will need basic materials such as {{materials}}. A detailed list
+              of materials for each activity is provided within the lesson plan.
+            </p>
+            <h3 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Instructions</h3>
+            <p class="text-[#111418] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              The lesson plan includes step-by-step instructions for each activity, ensuring clarity and ease of implementation. Each step is designed to guide students through the
+              process, from formulating hypotheses to drawing conclusions based on their findings.
+            </p>
+            <h3 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Multimedia Content</h3>
+            <p class="text-[#111418] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Enhance the learning experience with accompanying multimedia content, including videos demonstrating experiments and interactive simulations that allow students to
+              explore concepts in a virtual environment.
+            </p>
+            <div class="flex px-4 py-3 justify-start">
+            <a href="{{download_link}}" download>
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0d80f2] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Download Lesson Plan</span>
+              </button>
+              </a>
+            </div>
+            <h3 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Related Resources</h3>
+           <div class="flex flex-wrap gap-3 p-4">
+  {% for related in collections[tags] %}
+    {% if related.url != page.url %}
+      <div class="w-[158px] flex flex-col gap-3 rounded-lg border border-[#dbe0e6] bg-white p-4">
+        <div
+          class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-full"
+          style='background-image: url("{{related.data.cover}}");'
+        ></div>
+        <a href="{{related.url}}">
+          <div class="flex flex-col gap-1">
+            <h2 class="text-[#111418] text-base font-bold leading-tight">{{related.data.title}}</h2>
+            <p class="text-[#60758a] text-sm font-normal leading-normal truncate">{{related.data.preview}}</p>
+          </div>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+          </div>
+        </div>
+
+            {% include "footer.njk" %}
+
+        </div>
+    </div>
+</body>
+
+</html>
