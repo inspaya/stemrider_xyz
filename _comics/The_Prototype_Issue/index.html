@@ -107,7 +107,7 @@
               </div>
               <div class="flex flex-wrap justify-center gap-4">
                 
-                <a href="https://instagram.com/istemlabsafricaig">
+                <a href="https://instagram.com/istemlabsafricaig" target="_blank">
                   <div class="text-[#60758a]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                       <path
@@ -117,8 +117,8 @@
                   </div>
                 </a>
               </div>
-              <a href="https://istemlabs.africa/">
-              <p class="text-[#60758a] text-sm font-normal leading-normal">@2025 STEMRider. All rights reserved.</p>
+              <a href="https://istemlabs.africa/" target="_blank">
+              <p class="text-[#60758a] text-sm font-normal leading-normal">@2025 iSTEMLabsAfrica Limited. All rights reserved.</p>
               </a>
             </footer>
           </div>
@@ -136,116 +136,122 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.getElementById('next-btn');
     const prevBtn = document.getElementById('prev-btn');
     
-    // Define page order: cover, then pages in order
+    // Define available pages from frontmatter
+    const availablePages = ['cover', null];
     const pageOrder = ['cover', ];
-    let currentPageIndex = 0;
     
-    // Show specified page
+    // Get initial page from URL or default to cover
+    function getInitialPage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const requestedPage = urlParams.get('page');
+        
+        // Check if requested page exists
+        if (requestedPage && (requestedPage === 'cover' || Object.keys(availablePages[1]).includes(requestedPage))) {
+            return requestedPage;
+        }
+        
+        // Default to cover for invalid/non-existent pages
+        return 'cover';
+    }
+    
+    const initialPage = getInitialPage();
+    
     function showPage(pageId) {
         // Hide all displays
         coverDisplay.classList.add('hidden');
         pageDisplays.forEach(display => display.classList.add('hidden'));
         
-        // Show selected display
+        // Validate pageId and show appropriate display
         const targetDisplay = document.getElementById(`comic-display-${pageId}`);
-        if (targetDisplay) {
+        if (targetDisplay && (pageId === 'cover' || Object.keys(null).includes(pageId))) {
             targetDisplay.classList.remove('hidden');
-        } else if (pageId === 'cover') {
+        } else {
+            // Default to cover for invalid pages
             coverDisplay.classList.remove('hidden');
+            pageId = 'cover';
         }
         
-        // Update navigation button styles
+        // Update navigation buttons
         navButtons.forEach(btn => {
             btn.classList.remove('bg-[#0d80f2]', 'text-white');
             btn.classList.add('bg-[#f0f2f5]', 'text-[#111418]');
         });
         
-        // Highlight active button
-        const activeBtn = document.getElementById(`nav-${pageId}`);
+        const activeBtn = document.querySelector(`[data-page="${pageId}"]`);
         if (activeBtn) {
             activeBtn.classList.remove('bg-[#f0f2f5]', 'text-[#111418]');
             activeBtn.classList.add('bg-[#0d80f2]', 'text-white');
         }
         
-        // Update current page index
-        currentPageIndex = pageOrder.indexOf(pageId);
+        // Update URL
+        const url = new URL(window.location);
+        if (pageId === 'cover') {
+            url.searchParams.delete('page');
+        } else {
+            url.searchParams.set('page', pageId);
+        }
+        window.history.pushState({}, '', url);
         
-        // Update Next/Previous button states
-        updateNavButtons();
+        updateNavButtons(pageId);
     }
     
-    // Update Next/Previous button appearance and functionality
-    function updateNavButtons() {
-        // Previous button
-        if (currentPageIndex <= 0) {
-            prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+    function updateNavButtons(currentPage) {
+        const currentIndex = pageOrder.indexOf(currentPage);
+        
+        // Update Previous button
+        if (currentIndex <= 0) {
             prevBtn.disabled = true;
+            prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
         } else {
-            prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
             prevBtn.disabled = false;
+            prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
         }
         
-        // Next button  
-        if (currentPageIndex >= pageOrder.length - 1) {
-            nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        // Update Next button  
+        if (currentIndex >= pageOrder.length - 1) {
             nextBtn.disabled = true;
+            nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
         } else {
-            nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
             nextBtn.disabled = false;
+            nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
         }
     }
     
-    // Add click handlers to navigation buttons
-    navButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
+    // Add click handlers
+    navButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
             e.preventDefault();
             const pageId = this.getAttribute('data-page');
             showPage(pageId);
-            
-            // Update URL without page reload
-            const url = new URL(window.location);
-            if (pageId === 'cover') {
-                url.searchParams.delete('page');
-            } else {
-                url.searchParams.set('page', pageId);
-            }
-            window.history.pushState({}, '', url);
         });
     });
     
-    // Previous button click handler
-    prevBtn.addEventListener('click', function() {
-        if (currentPageIndex > 0) {
-            const prevPageId = pageOrder[currentPageIndex - 1];
-            showPage(prevPageId);
-            
-            // Update URL
-            const url = new URL(window.location);
-            if (prevPageId === 'cover') {
-                url.searchParams.delete('page');
-            } else {
-                url.searchParams.set('page', prevPageId);
-            }
-            window.history.pushState({}, '', url);
-        }
-    });
-    
-    // Next button click handler
+    // Next/Previous button handlers
     nextBtn.addEventListener('click', function() {
-        if (currentPageIndex < pageOrder.length - 1) {
-            const nextPageId = pageOrder[currentPageIndex + 1];
-            showPage(nextPageId);
-            
-            // Update URL
-            const url = new URL(window.location);
-            url.searchParams.set('page', nextPageId);
-            window.history.pushState({}, '', url);
+        if (!this.disabled) {
+            const currentPage = pageOrder.find(page => 
+                !document.getElementById(`comic-display-${page}`).classList.contains('hidden')
+            );
+            const currentIndex = pageOrder.indexOf(currentPage);
+            if (currentIndex < pageOrder.length - 1) {
+                showPage(pageOrder[currentIndex + 1]);
+            }
         }
     });
     
-    // Check URL on page load for direct links
-    const urlParams = new URLSearchParams(window.location.search);
-    const initialPage = urlParams.get('page') || 'cover';
+    prevBtn.addEventListener('click', function() {
+        if (!this.disabled) {
+            const currentPage = pageOrder.find(page => 
+                !document.getElementById(`comic-display-${page}`).classList.contains('hidden')
+            );
+            const currentIndex = pageOrder.indexOf(currentPage);
+            if (currentIndex > 0) {
+                showPage(pageOrder[currentIndex - 1]);
+            }
+        }
+    });
+    
+    // Initialize with validated page
     showPage(initialPage);
 });
 </script>
