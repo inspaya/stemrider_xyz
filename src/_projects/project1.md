@@ -1,7 +1,7 @@
 ---
 title: "The C.N.C Hot-Wire Machine"
 preview: "Building amazing prototypes from Polysterene/Styrofoam"
-cover: "/assets/cards/project_cnc.png"
+cover: "/assets/cards/project_cnc.svg"
 description: "Participants learn about 3D Computer Aided Design (CAD), mechanics, electronics, and software development while working collaboratively to solve real-world problems. This project fosters creativity, problem-solving skills, and teamwork."
 units: "0"
 participants: "0"
