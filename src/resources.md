@@ -86,7 +86,7 @@ layout: "base.njk"
               <div class="flex flex-wrap gap-1 py-4 justify-start">
                 <div class="flex flex-col gap-3 p-4 w-[228px] rounded-lg border border-[#dbe0e6]">
                   <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
-                    style='background-image: url("/assets/cards/lesson_plans_science.png");'>
+                    style='background-image: url("/assets/cards/lesson_plans_science.svg");'>
                   </div>
                   <div class="flex flex-col gap-1">
                     <a href="#">
@@ -118,7 +118,7 @@ layout: "base.njk"
                 <div class="flex flex-wrap gap-1 py-4 justify-start">
                 <div class="flex flex-col gap-3 p-4 w-[228px] rounded-lg border border-[#dbe0e6]">
                   <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
-                    style='background-image: url("/assets/cards/mountains.png");'>
+                    style='background-image: url("/assets/cards/mountains.svg");'>
                   </div>
                   <div class="flex flex-col gap-1">
                     <a href="#">

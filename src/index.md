@@ -39,7 +39,7 @@ layout: "base.njk"
                         style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4N42uNQI35iEqffoNw2k4w5gBjwwHQBp0VjrKneqAOD7aNyJxD7LIipYzO0Xqwq5cQi9fJipJPAMSOpE1PykPyopoiO12GH13D118KgMz4K25PAljPtWz7IGQCwdP2xKz9BzlYPxHXc2-C7g-T3iD2BNy55yUZBFho_D1x5a5D31ArUuur0-zE2WSqo8ew0Nzf3HqN3wS5bzqJbdqNydvOXgIJERiQmDKxsv6Ko8EUn8WsXR4p7SIOl9eHJa5CD87Nsg_7StImWw");'>
                     </div> -->
                     <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
-                        style='background-image: url("./assets/cards/instagram_stemrider_just_launched.png");'>
+                        style='background-image: url("./assets/cards/instagram_stemrider_just_launched.svg");'>
                     </div>
                     <div>
                         <p class="text-[#111418] text-base font-medium leading-normal">Back our Kickstarter Campaign</p>
